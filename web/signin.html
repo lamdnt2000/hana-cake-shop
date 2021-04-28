@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign In</title>
+        <link href="/hanashop/resource/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+    <br><br><br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.jsp">Hana Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin.html">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="row justify-content-md-center">
+
+            <aside class="col-sm-5 ">
+
+
+                <div class="card">
+                    <article class="card-body">
+                        <a href="signup.html" class="float-right btn btn-outline-primary">Sign up</a>
+                        <h4 class="card-title mb-5 mt-2 float-left">Sign in</h4>
+
+
+                        <form action="DispatcherServlet" method="POST">
+                            <div class="form-group">
+                                <input name="txtUsername" class="form-control" placeholder="Username" type="text">
+                            </div> <!-- form-group// -->
+                            <div class="form-group">
+                                <input name="txtPassword" class="form-control" placeholder="******" type="password">
+                            </div> <!-- form-group// -->   
+                            <div class="form-group row">
+                                <div class="col-md-6 ">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Remember Me</input>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <p>
+
+                                <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8084/hanashop/login_google&response_type=code
+    &client_id=900436680092-hi4vui9lv9unoj80o8ak3qnqd3d0kimg.apps.googleusercontent.com&approval_prompt=force" class="btn btn-block btn-outline-primary"> <i class="fa fa-google"></i>Sign up with Google</a>
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button name="btAction" type="submit" class="btn btn-primary btn-block" value="LOGIN">Login</button>
+                                    </div> <!-- form-group// -->
+                                </div>
+
+
+                            </div> <!-- .row// -->                                                                  
+                        </form>
+                    </article>
+                </div> <!-- card.// -->
+
+            </aside> <!-- col.// -->
+
+        </div> <!-- row.// -->
+
+    </div> 
+    <!--container end.//-->
+
+    <br><br><br>
+
+    <script src="/hanashop/resource/home/vendor/jquery/jquery.min.js"></script>
+    <script src="/hanashop/resource/home/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</html>

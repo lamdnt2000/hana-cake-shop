@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Sign Up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="/hanashop/resource/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/hanashop/resource/home/css/shop-homepage.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" onclick='window.location.href = "/hanashop";'>Hana Shop</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="signin.html">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="signup.html">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <br>
+
+            <div class="row h-100 justify-content-center align-items-center">
+                <form action="DispatcherServlet" method="POST" id="signupForm" class="col-10 col-md-8 col-lg-6">
+
+                    <div class="form-group ">
+                        <small class="text-dark">Username</small>
+                        <input type="text" name="txtUsername"  class="form-control my-input" >
+                    </div>
+                    <div class="form-group ">
+                        <small class="text-dark">Full name</small>
+                        <input type="text" name="txtFullName"  class="form-control my-input" >
+                    </div>
+
+                    <div class="form-group">
+                        <small class="text-dark">Password</small>
+                        <input id="txtPassword" type="password" name="txtPassword"   class="form-control my-input">
+                    </div>
+                    <div class="form-group ">
+                        <small class="text-dark">Confirm Password</small>
+                        <input id="txtConfirm" type="password" name="txtConfirm"   class="form-control my-input" >
+                    </div>
+
+                    <br>
+                    <div class="form-group">
+                        <button id="submit" name="btAction" type="submit" value="SIGNUP" class="btn btn-block btn-outline-primary">Create Your Free Account</button>
+                    </div>
+               
+
+                </form>
+            </div>
+            
+
+
+
+        </div>
+
+        <script src="/hanashop/resource/home/vendor/jquery/jquery.min.js"></script>
+        <script src="/hanashop/resource/home/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/hanashop/resource/js/jquery-1.12.0.min.js" crossorigin="anonymous"></script>
+        <script src="/hanashop/resource/js/jquery.validate.min.js"></script>
+        <script src="/hanashop/resource/js/additional-methods.js"></script>
+        <script type="text/javascript">
+                        $().ready((function () {
+                            $('#signupForm').validate({
+                                rules: {
+                                    txtUsername: {
+                                        required: true,
+                                        rangelength: [6, 20]
+                                    },
+                                    txtFullName: {
+                                        required: true,
+                                        rangelength: [6, 50]
+                                    },
+                                    txtPassword: {
+                                        required: true,
+                                        rangelength: [6, 30]
+                                    },
+                                    txtConfirm: {
+                                        equalTo: "#txtPassword"
+                                    },
+    
+
+                                }
+                            })
+                        })
+                                );
+                        $('#submit').click(function () {
+                            if ($('#txtPassword').val() != "" && !$('#txtPassword').valid()) {
+                                $('#txtPassword').val("");
+                                $('#txtConfirm').val("");
+                            }
+
+                        });
+
+        </script>
+    </body>
+</html>
